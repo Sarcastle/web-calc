@@ -11,27 +11,27 @@
 <body>
   <div class="calculator-grid">
       <div class="output">
-         <div data-previous-operand class="previous-operand"></div>
-         <div data-current-operand class="current-operand"></div>
+         <div id="data-previous-operand" class="previous-operand"></div>
+         <input type="text" maxlength="16" readonly id="txtRunningTotal" class="current-operand" />
       </div>
-         <button data-all-clear class="span-two">AC</button>
-         <button data-delete>DEL</button>
-         <button data-operation>÷</button>
-         <button data-number>1</button>
-         <button data-number>2</button>
-         <button data-number>3</button>
-         <button data-operation>*</button>
-         <button data-number>4</button>
-         <button data-number>5</button>
-         <button data-number>6</button>
-         <button data-operation>+</button>
-         <button>7</button>
-         <button>8</button>
-         <button>9</button>
-         <button data-operation>-</button>
-         <button data-number>.</button>
-         <button data-number>0</button>
-      <button data-equals class="span-two">=</button> 
+      <button id="data-all-clear" class="span-two" onclick="acClick()">AC</button>
+      <button id="data-delete" onclick="doDelete()">DEL</button>
+      <button id="data-operation-division" onclick="doDivide()">÷</button>
+      <button id="data-number-1" onclick="numberClick('1')">1</button>
+      <button id="data-number-2" onclick="numberClick('2')">2</button>
+      <button id="data-number-3" onclick="numberClick('3')">3</button>
+      <button id="data-operation-multiply" onclick="doMultiply()">*</button>
+      <button id="data-number-4" onclick="numberClick('4')">4</button>
+      <button id="data-number-5" onclick="numberClick('5')">5</button>
+      <button id="data-number-6" onclick="numberClick('6')">6</button>
+      <button id="data-operation-add" onclick="doAddition()">+</button>
+      <button id="data-number-7" onclick="numberClick('7')">7</button>
+      <button id="data-number-8" onclick="numberClick('8')">8</button>
+      <button id="data-number-9" onclick="numberClick('9')">9</button>
+      <button id="data-operation-minus" onclick="doMinus">-</button>
+      <button id="data-number-decimal" onclick="decimalClick()">.</button>
+      <button id="data-number-0" onclick="numberClick('0')">0</button>
+      <button id="data-equals" class="span-two" onclick="doEquals()">=</button> 
  </div>
 </body>
 </html>
