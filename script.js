@@ -41,25 +41,42 @@ const acClick = () => {
 
 const doAddition = () => {
     operand1 = Number(document.getElementById('txtRunningTotal').value);
-    whatMathAreWeDoing = 'add';
     doingSomeMath = true;
     resetInput = true;
+    whatMathAreWeDoing = 'add';
 };
 
 const doMultiply = () => {
-
+    operand1 = Number(document.getElementById('txtRunningTotal').value);
+    doingSomeMath = true;
+    resetInput = true;
+    whatMathAreWeDoing = 'multiply';
 };
 
 const doDivide = () => {
-
+    operand1 = Number(document.getElementById('txtRunningTotal').value);
+    doingSomeMath = true;
+    resetInput = true;
+    whatMathAreWeDoing = 'divide';
 };
 
 const doMinus = () => {
-
+    operand1 = Number(document.getElementById('txtRunningTotal').value);
+    doingSomeMath = true;
+    resetInput = true;
+    whatMathAreWeDoing = 'subtract';
 };
 
 const decimalClick = () => {
-
+    if (resetInput){
+        document.getElementById('txtRunningTotal').value = '0.';
+        resetInput = false;
+    } else {
+        const currentValue = document.getElementById('txtRunningTotal').value;
+        if (currentValue.length < 16 && !currentValue.includes('.')) {
+            document.getElementById('txtRunningTotal').value += '.';
+        }
+    }
 };
 
 const doEquals = () => {
