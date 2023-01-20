@@ -82,17 +82,32 @@ const decimalClick = () => {
 const doEquals = () => {
     if (doingSomeMath) {
         operand2 = Number(document.getElementById('txtRunningTotal').value);
+        const hasDecimals = operand1.toString().includes('.') || operand2.toString().includes('.');
 
-        if (whatMathAreWeDoing === 'add') {
-            runningTotal = operand1 + operand2;
-        } else if (whatMathAreWeDoing === 'multiply') {
-            runningTotal = operand1 * operand2;
-        } else if (whatMathAreWeDoing === 'subtract') {
-            runningTotal = operand1 - operand2;
-        } else if (whatMathAreWeDoing === 'divide') {
-            runningTotal = operand1 / operand2;
+        if (hasDecimals) {
+            if (whatMathAreWeDoing === 'add') {
+                runningTotal = bigDecimal.add(operand1, operand2);
+            } else if (whatMathAreWeDoing === 'multiply') {
+                runningTotal = bigDecimal.multiply(operand1, operand2);
+            } else if (whatMathAreWeDoing === 'subtract') {
+                runningTotal = bigDecimal.subtract(operand1, operand2);
+            } else if (whatMathAreWeDoing === 'divide') {
+                runningTotal = bigDecimal.divide(operand1, operand2);
+            } else {
+                console.log('all is lost!');
+            }        
         } else {
-            console.log('all is lost!');
+            if (whatMathAreWeDoing === 'add') {
+                runningTotal = operand1 + operand2;
+            } else if (whatMathAreWeDoing === 'multiply') {
+                runningTotal = operand1 * operand2;
+            } else if (whatMathAreWeDoing === 'subtract') {
+                runningTotal = operand1 - operand2;
+            } else if (whatMathAreWeDoing === 'divide') {
+                runningTotal = operand1 / operand2;
+            } else {
+                console.log('all is lost!');
+            }
         }
 
         document.getElementById('txtRunningTotal').value = runningTotal;
